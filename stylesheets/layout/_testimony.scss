@@ -1,0 +1,43 @@
+.section-testimony {
+  background-color: $white;
+  .header-box {
+    padding-bottom: 29px;
+    margin-bottom: 53px;
+    position: relative;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 193px;
+      height: 1px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    h1 {
+      margin: 0;
+    }
+    p {
+      font-size: 21px;
+      line-height: 1.9;
+    }
+  }
+  .testimony-slider-container {
+    .slide-item {
+      .image-container {
+        width: 167px;
+        margin: 0 auto;
+        margin-bottom: 45px;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .text-box {
+        text-align: center;
+        width: 56%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

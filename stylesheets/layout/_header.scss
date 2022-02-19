@@ -1,0 +1,76 @@
+.header {
+  background-color: $white;
+
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  .main-header {
+    padding: 18px 0;
+  }
+  .logo-container {
+    width: 246px;
+    max-width: 100%;
+    @media (max-width: 565px) {
+      width: 157px;
+    }
+  }
+  .menu-toggle {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 15px;
+    top: calc(50% + 26px);
+    transform: translateY(-50%);
+    display: none;
+    cursor: pointer;
+    @media (max-width: 991px) {
+      display: flex;
+    }
+    span {
+      content: "";
+      display: inline-block;
+      width: 40px;
+      height: 2px;
+      background-color: $color-primary;
+      transition: all 0.3s ease;
+    }
+  }
+}
+.menu-opened {
+  .menu-toggle {
+    span {
+      &:first-child {
+        transform: rotateZ(28deg);
+        transform-origin: 0 0;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:last-child {
+        transform: rotateZ(-28deg);
+        transform-origin: -8px -2px;
+      }
+    }
+  }
+}
+
+.nav-up {
+  transform: translateY(-100%);
+}
+
+.chev-down-icon {
+  path {
+    fill: "#4b5368";
+    @media (max-width: 991px) {
+      fill: $white;
+    }
+  }
+}

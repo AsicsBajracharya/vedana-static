@@ -1,0 +1,49 @@
+.btn,
+button {
+  padding: 4px 115px;
+  border-radius: 45px;
+  font-size: 14px;
+  line-height: 2.85;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+  @media (max-width: 991px) {
+    padding: 4px 46px;
+  }
+  @media (max-width: 565px) {
+    padding: 1px 25px;
+    font-size: 12px;
+  }
+  @media (max-width: 320px) {
+    padding: 1px 20px;
+    font-size: 11px;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+.btn-primary {
+  background-color: $color-primary;
+  color: $white;
+  &:hover,
+  &:focus {
+    background-color: darken($color: $color-primary, $amount: 20%);
+  }
+}
+
+.button-container {
+  @media (max-width: 536px) {
+    justify-content: center !important;
+  }
+}
+
+.button-container.wide {
+  .btn,
+  .btn-primary {
+    width: 100%;
+    border-radius: 0;
+  }
+}

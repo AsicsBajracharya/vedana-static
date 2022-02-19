@@ -1,0 +1,24 @@
+.notice-bar {
+  background-color: $color-primary;
+  padding: 11px 0;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken($color-primary, 5%);
+  }
+  .container {
+    align-items: baseline;
+    .icon-container {
+      margin-right: 9px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 0;
+      color: $white;
+      @media (max-width: 565px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
