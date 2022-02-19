@@ -4,7 +4,7 @@
   @media (max-width: 991px) {
     position: fixed;
     width: 100%;
-    top: 143px;
+    top: 176px;
     z-index: 55;
     transition: opacity 0.1s ease;
     left: 0;
@@ -45,7 +45,7 @@
         padding: 0;
         @media (max-width: 991px) {
           padding: 17px;
-          width: 100%;
+          display: inline-block;
         }
         &:hover {
           @media (max-width: 991px) {
@@ -65,7 +65,7 @@
       position: relative;
       display: flex;
       @media (max-width: 991px) {
-        flex-direction: column;
+        display: inline-block;
       }
       &:hover {
         @media (max-width: 991px) {
@@ -152,6 +152,13 @@
             // color: $white;
           }
         }
+      }
+    }
+    .nav-item.active {
+      color: $color-primary;
+      @media (max-width: 991px) {
+        background-color: $color-primary;
+        color: $white;
       }
     }
   }
