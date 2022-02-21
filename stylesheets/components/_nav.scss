@@ -4,15 +4,15 @@
   @media (max-width: 991px) {
     position: fixed;
     width: 100%;
-    top: 143px;
+    top: 148px;
     z-index: 55;
     transition: opacity 0.1s ease;
     left: 0;
     background-color: $white;
-    opacityy: 0;
+    opacity: 0;
     visibility: hidden;
-    transform: translateY(20px);
-    display: none;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
   }
   .nav-list {
     display: flex;
@@ -24,6 +24,13 @@
       padding: 0;
     }
     .nav-item {
+      &:hover {
+        .nav-link {
+          @media (max-width: 991px) {
+            color: $white;
+          }
+        }
+      }
       &:not(:last-child) {
         margin-right: 42px;
         @media (max-width: 991px) {
@@ -35,7 +42,6 @@
           background-color: $color-primary;
         }
       }
-
       .nav-link {
         font-size: 14px;
         font-weight: 700;
@@ -45,19 +51,32 @@
         padding: 0;
         @media (max-width: 991px) {
           padding: 17px;
-          width: 100%;
-        }
-        &:hover {
-          @media (max-width: 991px) {
-            color: $white;
-          }
+          width: fit-content;
         }
       }
-      .nav-link.active {
+      // .nav-link.active {
+      //   color: $color-primary;
+      //   @media (max-width: 991px) {
+      //     background-color: $color-primary;
+      //     color: $white;
+      //   }
+      // }
+    }
+    .nav-item.active {
+      .nav-link {
         color: $color-primary;
         @media (max-width: 991px) {
-          background-color: $color-primary;
           color: $white;
+        }
+      }
+      @media (max-width: 991px) {
+        background-color: $color-primary;
+      }
+      .chev-down-icon {
+        path {
+          @media (max-width: 991px) {
+            fill: $white !important;
+          }
         }
       }
     }
@@ -140,7 +159,7 @@
             border-bottom: 1px solid rgba($white, 0.5);
           }
           &:hover {
-            // background-color: $color-primary;
+            background-color: $color-primary;
             color: $white;
             a {
               color: $white;
@@ -148,8 +167,17 @@
           }
           .nav-link {
             white-space: nowrap;
-
+            @media (max-width: 991px) {
+              color: $color-primary;
+            }
             // color: $white;
+          }
+        }
+        .nav-item.active {
+          .nav-link {
+            @media (max-width: 991px) {
+              color: $white;
+            }
           }
         }
       }
@@ -165,6 +193,5 @@ body.menu-opened {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    display: block;
   }
 }
