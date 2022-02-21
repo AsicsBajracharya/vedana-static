@@ -86,26 +86,7 @@
       @media (max-width: 991px) {
         flex-direction: column;
       }
-      &:hover {
-        @media (max-width: 991px) {
-          .icon-container {
-            transform: rotateZ(180deg);
 
-            .chev-down-icon {
-              path {
-                fill: $white;
-              }
-            }
-          }
-        }
-
-        .sub-menu {
-          visibility: visible;
-          opacity: 1;
-          height: fit-content;
-          transform: scaleY(1);
-        }
-      }
       .nav-link {
         margin-right: 14px;
       }
@@ -152,7 +133,7 @@
 
         .nav-item {
           width: 100%;
-          padding: 20px 25px;
+          padding: 0 25px;
           margin-bottom: 0;
           transition: all 0.3s ease;
           &:not(:last-child) {
@@ -180,6 +161,25 @@
             }
           }
         }
+      }
+    }
+    .nav-item-has-children.show {
+      .icon-container {
+        transform: rotateZ(180deg);
+
+        .chev-down-icon {
+          path {
+            @media (max-width: 991px) {
+              fill: $white;
+            }
+          }
+        }
+      }
+      .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        height: fit-content;
+        transform: scaleY(1);
       }
     }
   }

@@ -12,6 +12,29 @@ $(document).ready(function () {
     $("body").toggleClass("menu-opened")
   })
 
+  //sub-menu
+  $(".nav .icon-container").on("click", function () {
+    $(this).parent(".nav-item").toggleClass("show")
+    console.log("menu clicked")
+  })
+
+  $(document).mouseup(function (e) {
+    var container = $(".nav-item-has-children")
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      container.removeClass("show")
+    }
+  })
+  $(document).mouseup(function (e) {
+    var container = $("nav")
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $("body").removeClass("menu-opened")
+    }
+  })
+
   $(".course-details-big .details-item").on("click", function () {
     let desc = $(".course-details-big .description-container")
     let dataFor = $(this).attr("data-for")
