@@ -8,10 +8,6 @@ $(document).ready(function () {
     dots: true,
   })
 
-  $(".menu-toggle").on("click", function () {
-    $("body").toggleClass("menu-opened")
-  })
-
   //sub-menu
   $(".nav .icon-container").on("click", function () {
     $(this).parent(".nav-item").toggleClass("show")
@@ -26,13 +22,17 @@ $(document).ready(function () {
       container.removeClass("show")
     }
   })
-  $(document).mouseup(function (e) {
-    var container = $("nav")
+  // $(document).mouseup(function (e) {
+  //   var container = $(".nav")
 
-    // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-      $("body").removeClass("menu-opened")
-    }
+  //   // if the target of the click isn't the container nor a descendant of the container
+  //   if (!container.is(e.target) && container.has(e.target).length === 0) {
+  //     $("body").removeClass("menu-opened")
+  //   }
+  // })
+
+  $(".menu-toggle").on("click", function () {
+    $("body").toggleClass("menu-opened")
   })
 
   $(".course-details-big .details-item").on("click", function () {

@@ -12,6 +12,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
+    box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.35);
     transition: all 0.5s ease;
   }
   .nav-list {
@@ -126,6 +127,7 @@
         transform: scaleY(0);
         transition: all 0.3s ease;
         transform-origin: 0 0;
+
         @media (max-width: 991px) {
           position: static;
           box-shadow: none;
@@ -133,9 +135,12 @@
 
         .nav-item {
           width: 100%;
-          padding: 0 25px;
+          padding: 22px 25px;
           margin-bottom: 0;
           transition: all 0.3s ease;
+          @media (max-width: 991px) {
+            padding: 0 25px;
+          }
           &:not(:last-child) {
             border-bottom: 1px solid rgba($white, 0.5);
           }
