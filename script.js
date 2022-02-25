@@ -136,4 +136,21 @@ $(document).ready(function () {
 
     lastScrollTop = st
   }
+
+  $(".preview-link").on("click", function () {
+    console.log("preview link clicked")
+    $("body").addClass("modal-opened")
+    $(this).siblings(".overlay").addClass("show")
+    $(this).siblings(".modal-custom").addClass("show")
+  })
+  $(".overlay").on("click", function () {
+    $("body").removeClass("modal-opened")
+    $(this).siblings(".modal-custom").removeClass("show")
+    $(this).siblings(".overlay").removeClass("show")
+  })
+  $(".modal-header .icon-close").on("click", function () {
+    $(this).parent().parent(".modal-custom").removeClass("show")
+    $("body").removeClass("modal-opened")
+    $(".overlay").removeClass("show")
+  })
 })
